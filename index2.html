@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>GameFlow - Transforme Sua Produtividade</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" href="./icones/controle-de-video-game.png">
+    <style>
+        /* RESET ESSENCIAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* ESTILOS GERAIS - Foco em estabilidade */
+        html,
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: 'Inter', 'sans-serif';
+            background: #141415;
+            color: #ffffff;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+        }
+
+        section {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2vh auto;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin: 1.5rem auto;
+            line-height: 1.3;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #7c7e82;
+            margin: 1rem auto;
+            max-width: 800px;
+        }
+
+        /* HEADER ESTÁVEL */
+        .logo {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto;
+        }
+
+        /* BOTÕES */
+        .btn {
+            display: block;
+            padding: 1rem;
+            background-color: #14c9fd;
+            border-radius: 25px;
+            width: 90%;
+            max-width: 400px;
+            text-decoration: none;
+            color: white;
+            margin: 3rem auto 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(20, 201, 253, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(20, 201, 253, 0.4);
+        }
+
+        /* IMAGEM PRINCIPAL */
+        .imagem-principal {
+            width: 100%;
+            max-width: 800px;
+            margin: 1.5rem auto;
+            border-radius: 15px;
+            background: #1e1e1e;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* VIDEO */
+        .container-video {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .container-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* SETORES - Layout fixo para evitar reflow */
+        .setores {
+            width: 100%;
+        }
+
+        .setor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2.5rem 0;
+            padding: 1.5rem;
+            background: rgba(36, 36, 36, 0.7);
+            border-radius: 15px;
+            border: 1px solid rgba(58, 134, 255, 0.1);
+        }
+
+        .area-da-vida {
+            width: 100%;
+            max-width: 500px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .descricao-setor {
+            width: 100%;
+        }
+
+        .game-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1rem;
+            display: block;
+        }
+
+        .descricao-setor h3 {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+            font-weight: 600;
+        }
+
+        /* DEPOIMENTOS - Layout estável */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .depoimento {
+            padding: 1.5rem;
+            background-color: #242424;
+            border: 1px solid #333;
+            border-radius: 12px;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .depoimento-row1 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .foto-depoimento {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+
+        .nome-depoimento {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .avaliacao-depoimento {
+            margin: 0.5rem 0;
+        }
+
+        .texto-depoimento {
+            font-size: 0.95rem;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+
+        .data-depoimento {
+            font-size: 0.85rem;
+            color: #7c7e82;
+        }
+
+        /* OFERTAS - Layout consistente */
+        .ofertas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .oferta {
+            width: 100%;
+            max-width: 400px;
+            background-color: #242424;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .oferta:nth-child(1)::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(90deg, #b4f5ec, #428f99, #319197, #073b3f);
+            background-size: 300% 300%;
+            border-radius: 14px;
+            z-index: -1;
+            animation: animate-border 2s infinite linear;
+        }
+
+        @keyframes animate-border {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .nome-oferta {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .preco {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .preco-anterior {
+            text-decoration: line-through;
+            color: #7c7e82;
+        }
+
+        .preco-novo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #24d800;
+        }
+
+        .linha-divisoria {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 1.5rem 0;
+        }
+
+        .descricao-oferta {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+
+        .descricao-oferta p {
+            margin: 0.5rem 0;
+            text-align: left;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .btn-compra {
+            display: block;
+            padding: 1rem;
+            background-color: #14c9fd;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            text-align: center;
+            margin: 1.5rem auto 0;
+            box-shadow: 0 4px 15px rgba(20, 201, 253, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-compra:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(20, 201, 253, 0.4);
+        }
+
+        .garantia {
+            width: 100%;
+            max-width: 200px;
+            margin: 1.5rem auto 0;
+            display: block;
+        }
+
+        /* FAQ - Acordeão melhorado */
+        .faq {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: #242424;
+            border: 1px solid #333;
+            border-radius: 12px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            cursor: pointer;
+        }
+
+        .faq-main p {
+            color: white;
+            font-size: 1.1rem;
+            margin: 0;
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .chevron {
+            width: 20px;
+            height: 20px;
+            margin-left: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .chevron.rotated {
+            transform: rotate(180deg);
+        }
+
+        .faq-resposta {
+            padding: 0 1.5rem 1.5rem;
+            color: white;
+            font-size: 1rem;
+            text-align: left;
+            display: none;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+
+        /* MODAL */
+        .modal.hidden {
+            display: none;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            backdrop-filter: blur(6px);
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .modal-content input {
+            width: 100%;
+            padding: 12px 14px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        #modal-title {
+            color: #141415 !important;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .modal-content button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            .setor {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .setor:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+            .area-da-vida {
+                width: 48%;
+                height: 300px;
+                margin-bottom: 0;
+            }
+
+            .descricao-setor {
+                width: 48%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            h1 {
+                font-size: 3.2rem;
+            }
+
+            .ofertas {
+                flex-wrap: nowrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <img class="logo" src="./icones/controle-de-video-game.png" alt="">
+        <h1>Transforme sua vida em um <span style="color: #14c9fd;">jogo produtivo</span> com o GameFlow<span
+                style="color: #14c9fd;">.</span> </h1>
+        <p>O sistema que organiza toda a sua vida em um só lugar.</p>
+        <img class="imagem-principal" src="./areas-vida/imagem-principal.png" alt="">
+        <a class="btn" href="#compra">QUERO SER PRODUTIVO EM 2025!</a>
+
+    </section>
+
+    <section>
+        <h1>Veja como Funciona:</h1>
+        <p>Aperte o Play! <br>
+
+        <div class="container-video">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/rxmRKQgM0GU" title="Apresentação do GameFlow" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+            </div>
+        </div>
+
+
+        <!---
+
+        <div class="container-video">
+            <iframe src="https://www.youtube.com/embed/rxmRKQgM0GU" title="Apresentação do GameFlow" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        </div>-->
+        <a class="btn" href="#compra">QUERO SER PRODUTIVO EM 2025!</a>
+    </section>
+
+
+    <!---    <section>
+        <h1>Confira como é o GameFlow:</h1>
+        <p>Organize todas as áreas da sua vida: <br>
+        <div class="setores">
+            <div class="setor">
+                <img class="area-da-vida" src="./areas-vida/gamificacao.png" alt="">
+                <div class="descricao-setor">
+                    <img class="game-icon" src="./icones/sucesso.png" alt="">
+                    <h3>Ganhe XP cumprindo tarefas, suba de nível, ganhe moedas e colete recompensas!</h3>
+                </div>
+
+            </div>
+            <div class="setor">
+                <div class="descricao-setor">
+                    <img class="game-icon" src="./icones/computador.png" alt="">
+                    <h3>Crie hábitos positivos e organize sua rotina de forma simples e eficiente.</h3>
+                </div>
+                <img class="area-da-vida" src="./areas-vida/habitos.png" alt="">
+            </div>
+
+
+
+            <div class="setor">
+
+                <img class="area-da-vida" src="./areas-vida/tarefas.png" alt="">
+                <div class="descricao-setor">
+                    <img class="game-icon" src="./icones/avaliar.png" alt="">
+                    <h3>Planeje suas tarefas e mantenha o foco para conquistar seus objetivos.</h3>
+                </div>
+            </div>
+            <div class="setor">
+                <div class="descricao-setor">
+                    <img class="game-icon" src="./icones/cerebro.png" alt="">
+                    <h3>Centralize suas ideias e informações em um segundo cérebro digital.</h3>
+                </div>
+                <img class="area-da-vida" src="./areas-vida/segundo-cerebro.png" alt="">
+            </div>
+            <div class="setor">
+
+                <img class="area-da-vida" src="./areas-vida/planejamento.png" alt="">
+                <div class="descricao-setor">
+                    <img class="game-icon" src="./icones/resultado.png" alt="">
+                    <h3>Estruture seu planejamento semanal e alcance metas de longo prazo com facilidade.</h3>
+                </div>
+            </div>
+            <div class="setor">
+
+                <div class="descricao-setor">
+                    <img class="game-icon" src="./icones/dinheiro.png" alt="">
+                    <h3>Gerencie suas finanças, controle seus gastos e economize mais.</h3>
+                </div>
+                <img class="area-da-vida" src="./areas-vida/financeiro.png" alt="">
+            </div>
+            <div class="setor">
+
+                <img class="area-da-vida" src="./areas-vida/estudos.png" alt="">
+                <div class="descricao-setor">
+                    <img class="game-icon" src="./icones/educacao.png" alt="">
+                    <h3>Organize seus estudos e melhore seu desempenho acadêmico ou profissional.</h3>
+                </div>
+            </div>
+            <div class="setor">
+                <div class="descricao-setor">
+                    <img class="game-icon" src="./icones/musculo.png" alt="">
+                    <h3>Planeje seus treinos e acompanhe seu progresso físico de maneira prática.</h3>
+                </div> <img class="area-da-vida" src="./areas-vida/treinos.png" alt="">
+            </div>
+            <div class="setor">
+
+                <img class="area-da-vida" src="./areas-vida/compras.png" alt="">
+                <div class="descricao-setor">
+                    <img class="game-icon" src="./icones/carrinho-de-compras.png" alt="">
+                    <h3>Organize sua lista de compras e economize tempo no dia a dia.</h3>
+                </div>
+
+
+            </div>
+            <div class="setor">
+
+                <div class="descricao-setor">
+                    <img class="game-icon" src="./icones/viagem.png" alt="">
+                    <h3>Planeje suas viagens e aproveite ao máximo cada aventura.</h3>
+                </div>
+                <img class="area-da-vida" src="./areas-vida/viagens.png" alt="">
+            </div>
+
+
+
+        </div>
+        <a class="btn" href="#compra">QUERO SER PRODUTIVO EM 2025!</a>
+    </section>-->
+
+    <section>
+        <h1>Uma vida mais <span style="color: #14c9fd;">eficiente </span> e produtiva te espera</h1>
+        <p>O GameFlow vai te ajudar a transformar procrastinação em foco</p>
+        <div class="bullet-points">
+            <div class="bullet">
+                <p class="bullet-title">Você vai transformar sua vida em um jogo de produtividade.</p>
+                <p class="bullet-description">✅ Ganhe pontos completando tarefas, suba de nível, ganhe moedas e
+                    troque-as por recompensas.</p>
+                <p class="bullet-description">✅ Melhore suas habilidades como num jogo de RPG.</p>
+            </div>
+
+            <div class="bullet">
+                <p class="bullet-title">Você vai ter mais disciplina e foco do que nunca.</p>
+                <p class="bullet-description">✅ Ganhe pontos completando tarefas, suba de nível, ganhe moedas e
+                    troque-as por recompensas.</p>
+                <p class="bullet-description">✅ Melhore suas habilidades como num jogo de RPG.</p>
+            </div>
+            <div class="bullet">
+                <p class="bullet-title">Você vai conseguir organizar sua vida de uma vez por todas.</p>
+                <p class="bullet-description">✅ Ganhe pontos completando tarefas, suba de nível, ganhe moedas e
+                    troque-as por recompensas.</p>
+                <p class="bullet-description">✅ Melhore suas habilidades como num jogo de RPG.</p>
+            </div>
+            <div class="bullet">
+                <p class="bullet-title">Você vai conseguir visualizar, acompanhar e conquistar suas metas.</p>
+                <p class="bullet-description">✅ Ganhe pontos completando tarefas, suba de nível, ganhe moedas e
+                    troque-as por recompensas.</p>
+                <p class="bullet-description">✅ Melhore suas habilidades como num jogo de RPG.</p>
+            </div>
+
+        </div>
+
+    </section>
+    <section>
+        <h1>Confira o que estão falando do GameFlow...</h1>
+        <div class="grid">
+            <div class="depoimento">
+                <div class="depoimento-row1">
+                    <img class="foto-depoimento" src="./fotos-perfil/1.png" alt="">
+                    <p class="nome-depoimento">Izabelle Teixeira S.</p>
+                </div>
+
+                <span class="avaliacao-depoimento">⭐⭐⭐⭐⭐</span>
+
+                <p class="texto-depoimento">Como estudante de cursinho, é importante para acompanhar e organizar minhas
+                    tarefas. O sistema tem sido de grande ajuda no planejamento de todas as coisas que preciso fazer.
+                </p>
+                <p class="data-depoimento">25/11/2024</p>
+            </div>
+            <div class="depoimento">
+                <div class="depoimento-row1">
+                    <img class="foto-depoimento" src="./fotos-perfil/2.png" alt="">
+                    <p class="nome-depoimento">João Pedro Macedo</p>
+                </div>
+
+                <span class="avaliacao-depoimento">⭐⭐⭐⭐⭐</span>
+
+                <p class="texto-depoimento">Muito bom esse template, tem me ajudado a me manter organizado!</p>
+                <p class="data-depoimento">27/11/2024</p>
+            </div>
+            <div class="depoimento">
+                <div class="depoimento-row1">
+                    <img class="foto-depoimento" src="./fotos-perfil/perfil.webp" alt="">
+                    <p class="nome-depoimento">Guilherme Araújo</p>
+                </div>
+
+                <span class="avaliacao-depoimento">⭐⭐⭐⭐⭐</span>
+
+                <p class="texto-depoimento">Excelente, muito bom!</p>
+                <p class="data-depoimento">02/12/2024</p>
+            </div>
+            <div class="depoimento">
+                <div class="depoimento-row1">
+                    <img class="foto-depoimento" src="./fotos-perfil/perfil3.webp" alt="">
+                    <p class="nome-depoimento">Sofia Zanetti</p>
+                </div>
+
+                <span class="avaliacao-depoimento">⭐⭐⭐⭐⭐</span>
+
+                <p class="texto-depoimento">Já comprei outros que não me ajudaram muito, esse modelo de vocês é
+                    realmente eficiente, muito fácil de adaptar para necessidade da empresa. To gostando bastante e
+                    recomendo.</p>
+                <p class="data-depoimento">07/12/2024</p>
+            </div>
+            <div class="depoimento">
+                <div class="depoimento-row1">
+                    <img class="foto-depoimento" src="./fotos-perfil/4.png" alt="">
+                    <p class="nome-depoimento">Pedro Lucca Mendes</p>
+                </div>
+
+                <span class="avaliacao-depoimento">⭐⭐⭐⭐⭐</span>
+
+                <p class="texto-depoimento">É difícil encontrar o modelo perfeito que encaixe especificamente ao que
+                    preciso. Felizmente, este pode ser personalizado para corresponder ao que estou tentando realizar.
+                    Achei ótimo!</p>
+                <p class="data-depoimento">11/12/2024</p>
+            </div>
+            <div class="depoimento">
+                <div class="depoimento-row1">
+                    <img class="foto-depoimento" src="./fotos-perfil/5.png" alt="">
+                    <p class="nome-depoimento">Gustavo Ribeiro</p>
+
+                </div>
+
+                <span class="avaliacao-depoimento">⭐⭐⭐⭐⭐</span>
+
+                <p class="texto-depoimento">Incrível como a organização já otimiza o tempo e o esforço tanto em tarefas
+                    pessoais quanto no trabalho. Estou amando!!</p>
+                <p class="data-depoimento">12/12/2024</p>
+            </div>
+            <div class="depoimento">
+                <div class="depoimento-row1">
+                    <img class="foto-depoimento" src="./fotos-perfil/3.png" alt="">
+                    <p class="nome-depoimento">Paulo Ciesla</p>
+
+                </div>
+
+                <span class="avaliacao-depoimento">⭐⭐⭐⭐⭐</span>
+
+                <p class="texto-depoimento">Extremamente útil e não consigo parar de usar.</p>
+                <p class="data-depoimento">15/12/2024</p>
+            </div>
+            <div class="depoimento">
+                <div class="depoimento-row1">
+                    <img class="foto-depoimento" src="./fotos-perfil/perfil2.webp" alt="">
+                    <p class="nome-depoimento">Beatriz Camargo</p>
+                </div>
+
+                <span class="avaliacao-depoimento">⭐⭐⭐⭐⭐</span>
+
+                <p class="texto-depoimento">Esse supera outras ferramentas com a vantagem de manter todos as informações
+                    de diferentes áreas da vida em um único lugar de forma bem organizada. </p>
+                <p class="data-depoimento">19/12/2024</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section>
+        <h1>Como funciona?</h1>
+        <div class="como-funciona">
+            <p>1) Compre</p>
+            <p>2) Receba o acesso ao sistema imediatamente por e-mail</p>
+            <p>3) Receba acesso ao curso ensinando a configurar e usar o sistema</p>
+            <p>4) Transforme sua vida em um jogo produtivo em menos de 1 semana!</p>
+        </div>
+
+    </section>
+
+
+    <section>
+        <h1>Oferta única de fim de ano!</h1>
+        <p>Comece 2025 com organização e produtividade.</p>
+        <div id="compra" class="ofertas">
+
+            <div class="oferta">
+                <p class="nome-oferta">GameFlow Pro</p>
+                <div class="preco">
+                    <p class="preco-anterior">R$169,90</p>
+                    <p class="preco-novo">R$59,90</p>
+                </div>
+                <hr class="linha-divisoria">
+                <div class="descricao-oferta">
+                    <p>✔️ GameFlow</p>
+                    <p>✔️ Curso ensinando a usar e configurar o sistema</p>
+                    <p>✔️ Atualizações e melhorias</p>
+                    <p>✔️ <span style="color: rgb(255, 14, 195);  font-weight: 700;">MindFlow </span> (criação de
+                        conteúdo) <span class="preco-anterior">R$47</span></p>
+                    <p>✔️ <span style="color: rgb(102, 253, 102); font-weight: 700;">Enterprise Flow </span> (gestão de
+                        empresas) <span class="preco-anterior">R$97</span></p>
+                    <!-- <p>✔️ <span style="color: rgb(255, 14, 195);  font-weight: 700;">Create Flow </span> (criação de
+                        conteúdo) <span class="preco-anterior">R$47</span></p>
+                    <p>✔️ <span style="color: rgb(102, 253, 102); font-weight: 700;">Enterprise Flow </span> (gestão de
+                        empresas) <span class="preco-anterior">R$97</span></p>-->
+                    <p>✔️ Suporte <span style="color: rgb(255, 153, 20); font-weight: 700;">prioritário </span></p>
+                    <p>✔️ <span style="color: rgb(251, 255, 36); font-weight: 700;">Garantia</span> de 7 dias (zero
+                        risco)</p>
+                    <p>🎁 <span style="font-weight: 700;">Bônus:</span> Curso de Notion</p>
+                    <p>🎁 <span style="font-weight: 700;">Bônus:</span> Curso de Produtividade</p>
+                    <p>🎁 <span style="font-weight: 700;">Bônus</span> secreto</p>
+                </div>
+                <div class="oferta-bottom">
+                    <a id="buyPro" class="btn-compra" href="https://sun.eduzz.com/zezrsoqi">Eu quero o Game Flow
+                        Pro!</a>
+                    <img class="garantia" src="icones/compra-garantida.png" alt="">
+
+                </div>
+            </div>
+            <div class="oferta">
+                <p class="nome-oferta">GameFlow Básico</p>
+                <div class="preco">
+                    <p class="preco-anterior">R$97,90</p>
+                    <p class="preco-novo">R$29,90</p>
+                </div>
+                <hr class="linha-divisoria">
+                <div class="descricao-oferta">
+                    <p>✔️ GameFlow</p>
+                    <p>✔️ Curso ensinando a usar e configurar o sistema</p>
+                    <p>✔️ Atualizações e melhorias</p>
+                </div>
+                <div class="oferta-bottom">
+                    <a id="buyBasico" class="btn-compra" href="https://sun.eduzz.com/xturloe6">Eu quero o Game Flow
+                        Básico</a>
+                    <img class="garantia" src="icones/compra-garantida.png" alt="">
+                </div>
+            </div>
+        </div>
+        <a class="btn" href="#compra">QUERO SER PRODUTIVO EM 2025!</a>
+
+    </section>
+
+
+    <section>
+        <h1>Perguntas frequentes</h1>
+        <div class="faq">
+            <div class="faq-item">
+                <div class="faq-main">
+                    <p class="faq-pergunta">Consigo acessar pelo celular?</p>
+                    <img class="chevron" src="./icones/chevron.png" alt="">
+                </div>
+                <p class="faq-resposta">Sim, o sistema é completamente responsivo e pode ser acessado pelo celular.
+                </p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-main">
+                    <p class="faq-pergunta">Como vou receber o Game Flow e o treinamento auxiliar?</p>
+                    <img class="chevron" src="./icones/chevron.png" alt="">
+                </div>
+                <p class="faq-resposta">Você receberá o acesso via e-mail logo após a confirmação da compra.
+                </p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-main">
+                    <p class="faq-pergunta">Sou iniciante no Notion, consigo me adaptar?</p>
+                    <img class="chevron" src="./icones/chevron.png" alt="">
+                </div>
+                <p class="faq-resposta">Claro! O sistema foi desenvolvido para ser intuitivo, mesmo para iniciantes E
+                    temos nosso treinamento auxiliar para te ajudar!
+                </p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-main">
+                    <p class="faq-pergunta">Eu terei suporte a dúvidas?</p>
+                    <img class="chevron" src="./icones/chevron.png" alt="">
+                </div>
+                <p class="faq-resposta">Sim, você terá acesso a um suporte dedicado para esclarecer suas dúvidas.
+                </p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-main">
+                    <p class="faq-pergunta">Posso personalizar meu sistema Game Flow?</p>
+                    <img class="chevron" src="./icones/chevron.png" alt="">
+                </div>
+
+                <p class="faq-resposta">Sim, o sistema é completamente personalizável para atender às suas necessidades.
+                </p>
+            </div>
+
+            <a class="btn" href="#compra">QUERO SER PRODUTIVO EM 2025!</a>
+        </div>
+
+
+    </section>
+
+    <section>
+        <h1>Compre uma vez, seja produtivo para sempre.</h1>
+        <p>Comece 2025 com organização e produtividade.</p>
+        <div class="ofertas">
+
+            <div class="oferta">
+                <p class="nome-oferta">GameFlow Pro</p>
+                <div class="preco">
+                    <p class="preco-anterior">R$169,90</p>
+                    <p class="preco-novo">R$59,90</p>
+                </div>
+                <hr class="linha-divisoria">
+                <div class="descricao-oferta">
+                    <p>✔️ GameFlow</p>
+                    <p>✔️ Curso ensinando a usar e configurar o sistema</p>
+                    <p>✔️ Atualizações e melhorias</p>
+                    <p>✔️ <span style="color: rgb(255, 14, 195);  font-weight: 700;">MindFlow </span> (criação de
+                        conteúdo) <span class="preco-anterior">R$47</span></p>
+                    <p>✔️ <span style="color: rgb(102, 253, 102); font-weight: 700;">Enterprise Flow </span> (gestão de
+                        empresas) <span class="preco-anterior">R$97</span></p>
+                    <!-- <p>✔️ <span style="color: rgb(255, 14, 195);  font-weight: 700;">Create Flow </span> (criação de
+                        conteúdo) <span class="preco-anterior">R$47</span></p>
+                    <p>✔️ <span style="color: rgb(102, 253, 102); font-weight: 700;">Enterprise Flow </span> (gestão de
+                        empresas) <span class="preco-anterior">R$97</span></p>-->
+                    <p>✔️ Suporte <span style="color: rgb(255, 153, 20); font-weight: 700;">prioritário </span></p>
+                    <p>✔️ <span style="color: rgb(251, 255, 36); font-weight: 700;">Garantia</span> de 7 dias (zero
+                        risco)</p>
+                    <p>🎁 <span style="font-weight: 700;">Bônus:</span> Curso de Notion</p>
+                    <p>🎁 <span style="font-weight: 700;">Bônus:</span> Curso de Produtividade</p>
+                    <p>🎁 <span style="font-weight: 700;">Bônus</span> secreto</p>
+                </div>
+                <div class="oferta-bottom">
+                    <a id="buyPro" class="btn-compra" href="https://sun.eduzz.com/zezrsoqi">Eu quero o Game Flow
+                        Pro!</a>
+                    <img class="garantia" src="icones/compra-garantida.png" alt="">
+
+                </div>
+            </div>
+            <div class="oferta">
+                <p class="nome-oferta">GameFlow Básico</p>
+                <div class="preco">
+                    <p class="preco-anterior">R$97,90</p>
+                    <p class="preco-novo">R$29,90</p>
+                </div>
+                <hr class="linha-divisoria">
+                <div class="descricao-oferta">
+                    <p>✔️ GameFlow</p>
+                    <p>✔️ Curso ensinando a usar e configurar o sistema</p>
+                    <p>✔️ Atualizações e melhorias</p>
+                </div>
+                <div class="oferta-bottom">
+                    <a id="buyBasico" class="btn-compra" href="https://sun.eduzz.com/xturloe6">Eu quero o Game Flow
+                        Básico</a>
+                    <img class="garantia" src="icones/compra-garantida.png" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <footer>
+        <p>Termos de Uso | Políticas de Privacidade | Contato </p>
+        <p>© 2024 GameFlow. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const chevron = item.querySelector('.chevron');
+            const resposta = item.querySelector('.faq-resposta');
+
+            chevron.addEventListener('click', () => {
+                // Alterna a classe 'rotated' no chevron
+                chevron.classList.toggle('rotated');
+
+                // Mostra ou esconde a resposta
+                if (resposta.style.display === 'block') {
+                    resposta.style.display = 'none';
+                } else {
+                    resposta.style.display = 'block';
+                }
+            });
+        });
+    </script>
+
+
+    <script>
+        function getURLParameters() {
+            const params = new URLSearchParams(window.location.search);
+            return params.toString() ? '?' + params.toString() : '';
+        }
+
+        function addParamsToCheckout() {
+            const params = getURLParameters();
+            const url1 = "https://sun.eduzz.com/xturloe6" + params; // Básico
+            const url2 = "https://sun.eduzz.com/zezrsoqi" + params; // Pro
+
+            const checkoutBasico = document.getElementById("buyBasico");
+            const checkoutPro = document.getElementById("buyPro");
+
+            checkoutBasico.href = url1;
+            checkoutPro.href = url2;
+        }
+
+        window.onload = addParamsToCheckout;
+
+    </script>
+
+</body>
+
+</html>
