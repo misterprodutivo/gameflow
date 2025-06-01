@@ -75,7 +75,7 @@ p {
     padding: 1rem;
     background-color: #14c9fd;
     border-radius: 25px;
-    width: 40%;
+    width: 50%;
     text-decoration: none;
     color: white;
     margin: auto;
@@ -581,7 +581,7 @@ footer p {
         margin-top: 3vh;
     }
     a {
-        width: 70vw !important;
+        width: 80vw !important;
         font-size: 0.9rem;
     }
     .setor {
@@ -634,10 +634,10 @@ footer p {
 
 
     .oferta:nth-child(1) {
-        height: 70vh;
+        height: 110vh;
     }
     .oferta:nth-child(2) {
-        height: 110vh;
+        height: 50vh;
     }
     .preco-novo{
         font-size: 1.5rem;
