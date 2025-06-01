@@ -5,6 +5,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', 'sans-serif';
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 html {
@@ -45,22 +47,6 @@ h1 {
     margin: auto;
     margin-top: 2vh;
     margin-bottom: 2vh;
-}
-
-.container-video {
-    position: relative;
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-bottom: 45%;
-    border-radius: 15px;
-    height: 0;
-    overflow: hidden;
-    margin-top: 5vh !important;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1),
-        0 0 20px rgba(0, 255, 255, 0.1),
-        0 0 40px rgba(0, 255, 255, 0.1);
-    transition: box-shadow 0.3s ease;
 }
 
 .logo {
@@ -312,27 +298,32 @@ footer p {
         width: 90%;
         margin-top: 2vh !important;
     }
+
     body,
     section {
         padding: 0;
         margin: 0;
     }
+
     h3 {
         font-size: 1rem;
         width: 80%;
         margin: auto;
     }
+
     section {
         width: 90vw;
         margin: auto;
         margin-top: 5vh;
     }
+
     p {
         font-size: 1rem;
         margin: 0;
         width: 85%;
         margin: auto;
     }
+
     .game-icon {
         width: 10vw;
     }
@@ -352,6 +343,7 @@ footer p {
         width: 70vw !important;
         font-size: 0.9rem;
     }
+
     .ofertas {
         flex-direction: column;
         margin-top: 2vh;
@@ -362,6 +354,7 @@ footer p {
         margin: auto;
         margin-bottom: 5vh;
     }
+
     .preco-novo {
         font-size: 1.5rem;
     }
@@ -398,88 +391,5 @@ footer p {
     .descricao-setor h3 {
         font-size: 0.7rem;
         font-weight: 400;
-    }
-}
-
-
-
-
-
-/* Modal oculto por padrão */
-.modal.hidden {
-    display: none;
-}
-
-/* Fundo do modal cobrindo toda a tela com blur */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: blur(6px);
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Fundo escuro translúcido */
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-/* Conteúdo do formulário */
-.modal-content {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 16px;
-    max-width: 400px;
-    width: 90%;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-    animation: fadeInUp 0.3s ease;
-}
-
-/* Inputs do formulário */
-.modal-content input {
-    width: 100%;
-    padding: 12px 14px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-#modal-title {
-    color: #141415 !important;
-    font-size: 1.3rem;
-}
-
-/* Botão de envio */
-.modal-content button {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 14px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.modal-content button:hover {
-    background-color: #45a049;
-}
-
-/* Animação suave ao abrir */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
