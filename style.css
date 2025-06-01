@@ -7,10 +7,6 @@
     font-family: 'Inter', 'sans-serif';
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     background-color: #141415;
     color: white;
@@ -37,7 +33,7 @@ section h1 {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 3rem;
     font-family: 'Inter', 'sans-serif';
     font-weight: 800;
     width: 80%;
@@ -53,13 +49,12 @@ h1 {
     max-width: 800px;
     margin: 0 auto;
     padding-bottom: 45%;
-    border-radius: 15px;
     height: 0;
     overflow: hidden;
     margin-top: 5vh !important;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1),
-        0 0 20px rgba(0, 255, 255, 0.1),
-        0 0 40px rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6),
+        0 0 20px rgba(0, 255, 255, 0.4),
+        0 0 40px rgba(0, 255, 255, 0.2);
     transition: box-shadow 0.3s ease;
 }
 
@@ -89,9 +84,11 @@ p {
     border-radius: 25px;
     cursor: pointer;
 
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1),
-        0 0 20px rgba(0, 255, 255, 0.1),
-        0 0 40px rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.6),
+
+        0 0 10px rgba(0, 255, 255, 0.4),
+
+        0 0 20px rgba(0, 255, 255, 0.2);
     transition: transform 0.3s ease;
 }
 
@@ -110,10 +107,12 @@ p {
 .area-da-vida {
     width: 50%;
     margin: 25px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1),
-        0 0 20px rgba(0, 255, 255, 0.1),
-        0 0 40px rgba(0, 255, 255, 0.1);
-        border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.6),
+        /* Luz suave */
+        0 0 10px rgba(0, 255, 255, 0.4),
+        /* Luz mais expandida */
+        0 0 20px rgba(0, 255, 255, 0.2);
+    /* Luz ainda mais suave */
 }
 
 .imagem-principal {
@@ -126,17 +125,22 @@ p {
     background: #1e1e1e;
     /* Cor do fundo da caixa */
     border-radius: 25px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1),
-        0 0 20px rgba(0, 255, 255, 0.1),
-        0 0 40px rgba(0, 255, 255, 0.1);
+    /* Borda arredondada */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6),
+        /* Luz suave */
+        0 0 20px rgba(0, 255, 255, 0.4),
+        /* Luz mais expandida */
+        0 0 40px rgba(0, 255, 255, 0.2);
+    /* Luz ainda mais suave */
     transition: box-shadow 0.3s ease;
 }
 
 /* Efeito ao passar o mouse */
 .imagem-principal:hover {
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1),
-        0 0 20px rgba(0, 255, 255, 0.1),
-        0 0 40px rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 1),
+        /* Azul brilhante intenso */
+        0 0 30px rgba(0, 255, 255, 0.8),
+        0 0 60px rgba(0, 255, 255, 0.6);
 }
 
 
@@ -172,7 +176,7 @@ p {
 
 
 .depoimento {
-
+    
     height: 45vh;
     margin: 10px;
     transition: transform 0.3s ease;
@@ -223,11 +227,9 @@ p {
     font-weight: 600;
 }
 
-.texto-depoimento,
-.data-depoimento {
+.texto-depoimento, .data-depoimento {
     font-size: 1rem;
-    text-align: left;
-    margin-top: 3vh;
+    text-align: left;margin-top: 3vh;
 }
 
 .descricao-setor {
@@ -241,8 +243,10 @@ p {
     width: 5vw;
 
 }
+.data-depoimento {
 
-.data-depoimento {}
+    
+}
 
 /*
 .data-depoimento {
@@ -289,7 +293,7 @@ p {
     color: white;
 }
 
-.btn-compra {
+.btn-compra{
     width: 60%;
     background-color: #14c9fd;
     padding: 1rem;
@@ -352,15 +356,13 @@ p {
     width: 70%;
 }
 
-.btn,
-.btn-compra {
+.btn, .btn-compra {
     text-decoration: none !important;
     color: white;
     transition: 0.5s ease;
 }
 
-.btn:hover,
-.btn-compra:hover {
+.btn:hover, .btn-compra:hover {
     transform: scale(1.05) !important;
 }
 
@@ -402,14 +404,13 @@ p {
 }
 
 footer {
-
+   
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 80%;
-    margin: auto;
-    margin-top: 10vh;
+    margin: auto; margin-top: 10vh;
 }
 
 footer p {
@@ -437,7 +438,7 @@ footer p {
     align-items: flex-start;
     width: 60%;
     height: auto;
-
+   
 }
 
 
@@ -445,7 +446,7 @@ footer p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start; 
     position: relative;
     width: 100%;
 }
@@ -494,30 +495,22 @@ footer p {
 /*Reutilizaveis*/
 
 .grid {
-    width: 100%;
+    width: 100%;  
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /* 4 colunas na linha de cima */
-    grid-auto-rows: 1fr;
-    /* Altura automática para os cards */
-    gap: 10px;
-    /* Espaçamento entre os cards */
-    justify-content: center;
-    /* Centraliza a segunda linha */
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas na linha de cima */
+    grid-auto-rows: 1fr; /* Altura automática para os cards */
+    gap: 10px; /* Espaçamento entre os cards */
+    justify-content: center; /* Centraliza a segunda linha */
     align-items: center;
 }
 
 .bullet-points {
-    width: 100%;
+    width: 100%;  
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* 4 colunas na linha de cima */
-    grid-auto-rows: 1fr;
-    /* Altura automática para os cards */
-    gap: 20px;
-    /* Espaçamento entre os cards */
-    justify-content: center;
-    /* Centraliza a segunda linha */
+    grid-template-columns: repeat(2, 1fr); /* 4 colunas na linha de cima */
+    grid-auto-rows: 1fr; /* Altura automática para os cards */
+    gap: 20px; /* Espaçamento entre os cards */
+    justify-content: center; /* Centraliza a segunda linha */
     align-items: center;
     margin-top: 5vh;
 
@@ -530,7 +523,7 @@ footer p {
     border-radius: 12px;
     width: 35vw;
     padding: 1rem;
-
+    
 }
 
 .bullet-title {
@@ -553,58 +546,45 @@ footer p {
 /* Mobile (até 600px) */
 @media (max-width: 600px) {
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         margin: auto;
         margin-bottom: 2vh !important;
-        width: 90%;
-        margin-top: 2vh !important;
+        width: 100%;
     }
-
-    body,
-    section {
+    body, section {
         padding: 0;
         margin: 0;
     }
-
     h3 {
         font-size: 1rem;
         width: 80%;
         margin: auto;
     }
-
     section {
         width: 90vw;
         margin: auto;
         margin-top: 5vh;
     }
-
     p {
         font-size: 1rem;
         margin: 0;
-        width: 85%;
-        margin: auto;
     }
-
-    .game-icon {
+    .game-icon{
         width: 10vw;
     }
-
     .logo {
         width: 15vw;
         height: 15vw;
     }
-
     .imagem-principal {
         width: 100%;
         margin: auto;
         margin-top: 3vh;
     }
-
     a {
         width: 70vw !important;
         font-size: 0.9rem;
     }
-
     .setor {
         flex-direction: column;
         position: relative;
@@ -613,39 +593,32 @@ footer p {
         margin-bottom: 3vh;
         margin-top: 5vh;
     }
-
     .area-da-vida {
         width: 70vw;
         position: absolute;
         bottom: 5%;
     }
-
-    .descricao-setor {
+    .descricao-setor{
         position: absolute;
         top: 0;
         margin: 0;
     }
-
     .bullet-points {
         display: flex;
         flex-direction: column;
     }
-
     .bullet {
         width: 90%;
     }
-
     .grid {
         display: flex;
         flex-direction: column;
     }
-
     .depoimento {
         width: 100% !important;
         padding: 2rem;
         height: auto;
     }
-
     .como-funciona p {
         margin-bottom: 2vh;
     }
@@ -654,7 +627,6 @@ footer p {
         flex-direction: column;
         margin-top: 2vh;
     }
-
     .oferta {
         width: 100%;
         margin: auto;
@@ -669,19 +641,15 @@ footer p {
         height: 110vh;
     }*/
 
-    .preco-novo {
+    .preco-novo{
         font-size: 1.5rem;
     }
-
-    .nome-oferta,
-    .preco {
+    .nome-oferta, .preco{
         margin-bottom: 2vh;
     }
-
     .faq {
         width: 100%;
     }
-
     .faq-item {
         width: 100%;
         height: auto;
@@ -691,102 +659,16 @@ footer p {
 
     .faq p {
         font-size: 0.5rem;
-
+       
     }
-
-    footer {
-        margin-bottom: 5vh;
+    footer{
+         margin-bottom: 5vh;
     }
-
     footer p {
         font-size: 0.8rem;
     }
-
     .descricao-setor h3 {
         font-size: 0.7rem;
         font-weight: 400;
-    }
-}
-
-
-
-
-
-/* Modal oculto por padrão */
-.modal.hidden {
-    display: none;
-}
-
-/* Fundo do modal cobrindo toda a tela com blur */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: blur(6px);
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Fundo escuro translúcido */
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-/* Conteúdo do formulário */
-.modal-content {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 16px;
-    max-width: 400px;
-    width: 90%;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-    animation: fadeInUp 0.3s ease;
-}
-
-/* Inputs do formulário */
-.modal-content input {
-    width: 100%;
-    padding: 12px 14px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-#modal-title {
-    color: #141415 !important;
-    font-size: 1.3rem;
-}
-
-/* Botão de envio */
-.modal-content button {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 14px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.modal-content button:hover {
-    background-color: #45a049;
-}
-
-/* Animação suave ao abrir */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
