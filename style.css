@@ -1,91 +1,44 @@
+:root {
+  --primary-color:  #14c9fd;
+  --main-font: 'Inter', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-}
-
-/* ESTILOS GERAIS - Foco em estabilidade */
-html,
-body {
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
-    font-family: 'Inter', 'sans-serif';
-    background: #141415;
-    color: #ffffff;
-    line-height: 1.5;
-    scroll-behavior: smooth;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #181414;
+    font-family: var(--main-font);
+    color: white;
+    text-align: center;
+}
+
+.icon {
+    width: 50px;
+}
+
+.main-image {
+    width: 80vw;
 }
 
 section {
-    width: 90%;
-    max-width: 1200px;
-    margin: 2vh auto;
-    text-align: center;
-    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding-bottom: 2vh;
+    width: 80vw;
 }
 
-h1 {
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin: 1.5rem auto;
-    line-height: 1.3;
-}
-
-p {
-    font-size: 1.1rem;
-    color: #7c7e82;
-    margin: 1rem auto;
-    max-width: 800px;
-}
-
-/* HEADER ESTÁVEL */
-.logo {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto;
-}
-
-/* BOTÕES */
-.btn {
-    display: block;
-    padding: 1rem;
-    background-color: #14c9fd;
-    border-radius: 25px;
-    width: 90%;
-    max-width: 400px;
-    text-decoration: none;
-    color: white;
-    margin: 3rem auto 1rem;
-    font-weight: 600;
-    box-shadow: 0 4px 15px rgba(20, 201, 253, 0.3);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(20, 201, 253, 0.4);
-}
-
-/* IMAGEM PRINCIPAL */
-.imagem-principal {
-    width: 100%;
-    max-width: 800px;
-    margin: 1.5rem auto;
-    border-radius: 15px;
-    background: #1e1e1e;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* VIDEO */
-.container-video {
+.video-container {
     position: relative;
     width: 100%;
     max-width: 800px;
@@ -97,7 +50,7 @@ p {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.container-video iframe {
+.video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -106,370 +59,25 @@ p {
     border: 0;
 }
 
-/* SETORES - Layout fixo para evitar reflow */
-.setores {
-    width: 100%;
+h1 {
+    margin: 2vh;
 }
 
-.setor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 2.5rem 0;
-    padding: 1.5rem;
-    background: rgba(36, 36, 36, 0.7);
-    border-radius: 15px;
-    border: 1px solid rgba(58, 134, 255, 0.1);
+h2 {
+  margin: 2vh;
 }
 
-.area-da-vida {
-    width: 100%;
-    max-width: 500px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+h3 {
+  margin: 2vh;
 }
 
-.descricao-setor {
-    width: 100%;
+p {  margin: 2vh;
 }
 
-.game-icon {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 1rem;
-    display: block;
-}
-
-.descricao-setor h3 {
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
-    font-weight: 600;
-}
-
-/* DEPOIMENTOS - Layout estável */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.depoimento {
-    padding: 1.5rem;
-    background-color: #242424;
-    border: 1px solid #333;
-    border-radius: 12px;
-    text-align: left;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    min-height: 280px;
-    display: flex;
-    flex-direction: column;
-}
-
-.depoimento-row1 {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.foto-depoimento {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 1rem;
-}
-
-.nome-depoimento {
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-.avaliacao-depoimento {
-    margin: 0.5rem 0;
-}
-
-.texto-depoimento {
-    font-size: 0.95rem;
-    flex-grow: 1;
-    margin-bottom: 1rem;
-}
-
-.data-depoimento {
-    font-size: 0.85rem;
-    color: #7c7e82;
-}
-
-/* OFERTAS - Layout consistente */
-.ofertas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.oferta {
-    width: 100%;
-    max-width: 400px;
-    background-color: #242424;
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: 1.5rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.oferta:nth-child(1)::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(90deg, #b4f5ec, #428f99, #319197, #073b3f);
-    background-size: 300% 300%;
-    border-radius: 14px;
-    z-index: -1;
-    animation: animate-border 2s infinite linear;
-}
-
-@keyframes animate-border {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.nome-oferta {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.preco {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.preco-anterior {
-    text-decoration: line-through;
-    color: #7c7e82;
-}
-
-.preco-novo {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #24d800;
-}
-
-.linha-divisoria {
-    height: 1px;
-    background: rgba(255, 255, 255, 0.1);
-    margin: 1.5rem 0;
-}
-
-.descricao-oferta {
-    text-align: left;
-    margin-bottom: 1.5rem;
-}
-
-.descricao-oferta p {
-    margin: 0.5rem 0;
-    text-align: left;
+.button {
+    background-color: var(--primary-color);
     color: white;
-    font-size: 1rem;
-}
-
-.btn-compra {
-    display: block;
-    padding: 1rem;
-    background-color: #14c9fd;
-    border-radius: 25px;
     text-decoration: none;
-    color: white;
-    font-weight: 600;
-    text-align: center;
-    margin: 1.5rem auto 0;
-    box-shadow: 0 4px 15px rgba(20, 201, 253, 0.3);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn-compra:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(20, 201, 253, 0.4);
-}
-
-.garantia {
-    width: 100%;
-    max-width: 200px;
-    margin: 1.5rem auto 0;
-    display: block;
-}
-
-/* FAQ - Acordeão melhorado */
-.faq {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    background-color: #242424;
-    border: 1px solid #333;
-    border-radius: 12px;
-    margin-top: 1rem;
-    overflow: hidden;
-}
-
-.faq-main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    cursor: pointer;
-}
-
-.faq-main p {
-    color: white;
-    font-size: 1.1rem;
-    margin: 0;
-    text-align: left;
-    flex-grow: 1;
-}
-
-.chevron {
-    width: 20px;
-    height: 20px;
-    margin-left: 1rem;
-    transition: transform 0.3s ease;
-}
-
-.chevron.rotated {
-    transform: rotate(180deg);
-}
-
-.faq-resposta {
-    padding: 0 1.5rem 1.5rem;
-    color: white;
-    font-size: 1rem;
-    text-align: left;
-    display: none;
-}
-
-/* FOOTER */
-footer {
-    padding: 2rem 0;
-    text-align: center;
-    margin-top: 3rem;
-}
-
-footer p {
-    font-size: 0.9rem;
-    margin: 0.5rem 0;
-}
-
-/* MODAL */
-.modal.hidden {
-    display: none;
-}
-
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: blur(6px);
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-content {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-}
-
-.modal-content input {
-    width: 100%;
-    padding: 12px 14px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-}
-
-#modal-title {
-    color: #141415 !important;
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.modal-content button {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 14px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 1rem;
-}
-
-/* RESPONSIVIDADE */
-@media (min-width: 768px) {
-    h1 {
-        font-size: 2.8rem;
-    }
-
-    .setor {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .setor:nth-child(even) {
-        flex-direction: row-reverse;
-    }
-
-    .area-da-vida {
-        width: 48%;
-        height: 300px;
-        margin-bottom: 0;
-    }
-
-    .descricao-setor {
-        width: 48%;
-    }
-}
-
-@media (min-width: 992px) {
-    h1 {
-        font-size: 3.2rem;
-    }
-
-    .ofertas {
-        flex-wrap: nowrap;
-    }
+    border-radius: 25px;
+    padding: 1rem;
 }
