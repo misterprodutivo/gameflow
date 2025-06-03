@@ -18,6 +18,8 @@ body {
     font-family: var(--main-font);
     color: white;
     text-align: center;
+    width: 90%;
+    margin: auto;
 }
 
 .icon {
