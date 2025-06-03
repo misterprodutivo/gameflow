@@ -19,8 +19,7 @@ body {
     font-family: var(--main-font);
     color: white;
     text-align: center;
-    width: 90%;
-    margin: auto;
+    padding: 0 5%;
 }
 
 .icon {
@@ -29,7 +28,7 @@ body {
 }
 
 .main-image {
-     width: 90%;
+    width: 90%;
     border-radius: 25px;
     --box-shadow: 0 10px 20px -10px #6E79D6;
 }
@@ -103,6 +102,9 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    contain: layout;
 }
 
 .setor h3 {
@@ -111,5 +113,8 @@ p {
 
 .life-area {
     width: 90%;
+    aspect-ratio: 4 / 3;
+    /* ou um valor realista da imagem */
+    object-fit: cover;
     margin-top: 20px;
 }
