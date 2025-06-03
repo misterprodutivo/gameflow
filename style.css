@@ -28,7 +28,7 @@ body {
 }
 
 .main-image {
-    width: 90%;
+    width: 100%;
     border-radius: 25px;
     --box-shadow: 0 10px 20px -10px #6E79D6;
 }
@@ -112,9 +112,353 @@ p {
 }
 
 .life-area {
-    width: 90%;
-    aspect-ratio: 4 / 3;
-    /* ou um valor realista da imagem */
-    object-fit: cover;
+    width: 100%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
     margin-top: 20px;
+}
+
+
+.depoimento {
+    height: 45vh;
+    margin-top: var(--main-margin);
+    transition: transform 0.3s ease;
+    background-color: #242424;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    width: 100%;
+    margin: 10px;
+    padding: 2rem;
+    height: auto;
+}
+
+.depoimento:hover,
+.btn-compra:hover,
+.btn:hover {
+    transform: scale(1.05);
+    /* Aumenta 20% no tamanho */
+}
+
+.foto-depoimento {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.depoimento-row1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+.avaliacao-depoimento {
+    display: flex;
+    text-align: left;
+}
+
+.nome-depoimento {
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.texto-depoimento,
+.data-depoimento {
+    font-size: 1rem;
+    text-align: left;
+    margin: 0;
+    margin-top: var(--main-margin);
+}
+
+
+
+/* OFERTAS */
+
+
+.ofertas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.oferta {
+    width: 30vw;
+    height: auto;
+    background-color: white;
+    margin: 10px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #242424;
+    /* Cor do card */
+    border: 1px solid #333;
+    /* Borda sutil */
+    border-radius: 12px;
+    /* Bordas arredondadas */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    /* Sombra leve */
+
+}
+
+.nome-oferta {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2vh;
+    color: white;
+}
+
+.btn-compra {
+    width: 60%;
+    background-color: #14c9fd;
+    padding: 1rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn-compra:hover {
+    transform: scale(1.05) !important;
+}
+
+
+.garantia {
+    width: 50%;
+    margin-top: 5vh;
+}
+
+.oferta-bottom {
+    /*position: absolute;
+    bottom: 5%;*/
+    margin-top: 7vh;
+}
+
+.descricao-oferta {
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+}
+
+.descricao-oferta p {
+    font-size: 0.9rem;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.preco {
+    display: flex;
+    flex-direction: row;
+}
+
+.preco-novo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #24d800;
+}
+
+.preco-anterior {
+    text-decoration: line-through;
+}
+
+.linha-divisoria {
+    height: 1px;
+    color: #ffffff;
+    width: 70%;
+}
+
+.btn,
+.btn-compra {
+    text-decoration: none !important;
+    color: white;
+    transition: 0.5s ease;
+}
+
+.btn:hover,
+.btn-compra:hover {
+    transform: scale(1.05) !important;
+}
+
+.ofertas {
+    flex-direction: column;
+    margin-top: 2vh;
+}
+
+.oferta {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 5vh;
+}
+
+/* Borda animada */
+.oferta:nth-child(1)::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(90deg, #b4f5ec, #428f99, #319197, #073b3f);
+    background-size: 300% 300%;
+    /* Aumenta o tamanho do degradê */
+    border-radius: 14px;
+    /* Deve ser 2px maior que a borda do card */
+    z-index: -1;
+    animation: animate-border 2s infinite linear;
+    /* Aplica a animação */
+}
+
+/* Efeito de animação */
+@keyframes animate-border {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+footer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 10vh;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/*FAQ*/
+.faq {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.faq-item {
+    background-color: #242424;
+    /* Cor do card */
+    border: 1px solid #333;
+    /* Borda sutil */
+    border-radius: 12px;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    width: 60%;
+    height: auto;
+
+}
+
+
+.faq-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+}
+
+.faq-main p {
+    color: white;
+    font-size: 0.8rem !important;
+    margin-left: 2%;
+    text-align: left;
+}
+
+.chevron {
+    width: 2vw !important;
+    height: auto;
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+}
+
+.faq-resposta {
+    display: none;
+    color: white;
+    font-size: 0.9rem;
+    margin: 1rem 2%;
+    text-align: left;
+}
+
+/* Chevron girado */
+.chevron.rotated {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}
+
+.como-funciona {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 70%;
+    margin: auto;
+}
+
+.como-funciona p {
+    text-align: left;
+}
+
+.preco-novo {
+    font-size: 1.5rem;
+}
+
+.nome-oferta,
+.preco {
+    margin-bottom: 2vh;
+}
+
+.faq {
+    width: 100%;
+}
+
+.faq-item {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.faq p {
+    font-size: 0.5rem;
+
+}
+
+footer {
+    margin-bottom: 5vh;
+}
+
+footer p {
+    font-size: 0.8rem;
 }
