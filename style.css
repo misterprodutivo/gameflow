@@ -1,6 +1,7 @@
 :root {
     --primary-color: #14c9fd;
     --main-font: 'Inter', sans-serif;
+    --main-margin: 20px;
 }
 
 * {
@@ -24,7 +25,7 @@ body {
 
 .icon {
     width: 40px;
-    margin-top: 3vh;
+    margin-top: 30px;
 }
 
 .main-image {
@@ -39,7 +40,7 @@ section {
     align-items: center;
     justify-content: center;
     height: auto;
-    padding-bottom: 2vh;
+    padding-bottom: 20px;
     width: 90%;
 }
 
@@ -66,23 +67,23 @@ section {
 }
 
 h1 {
-    margin: 2vh;
+    margin: var(--main-margin);
     letter-spacing: -1px;
     font-weight: 700;
 }
 
 h2 {
-    margin: 2vh;
+    margin: var(--main-margin);
 }
 
 h3 {
-    margin: 2vh;
+    margin: var(--main-margin);
     font-size: 1rem;
     font-weight: 400;
 }
 
 p {
-    margin: 2vh;
+    margin: var(--main-margin);
     color: #8A8F98;
 }
 
@@ -110,5 +111,5 @@ p {
 
 .life-area {
     width: 90%;
-    margin-top: 1vh;
+    margin-top: 20px;
 }
