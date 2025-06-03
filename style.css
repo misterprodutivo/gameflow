@@ -23,12 +23,12 @@ body {
 }
 
 .icon {
-    width: 50px;
-    margin-top: 2vh;
+    width: 40px;
+    margin-top: 3vh;
 }
 
 .main-image {
-    width: 80vw;
+     width: 90%;
     border-radius: 25px;
     --box-shadow: 0 10px 20px -10px #6E79D6;
 }
@@ -40,7 +40,7 @@ section {
     justify-content: center;
     height: auto;
     padding-bottom: 2vh;
-    width: 80vw;
+    width: 90%;
 }
 
 .video-container {
@@ -109,6 +109,6 @@ p {
 }
 
 .life-area {
-    width: 80vw;
+    width: 90%;
     margin-top: 1vh;
 }
