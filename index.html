@@ -1,358 +1,661 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>GameFlow</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <title>GameFlow - Transforme Sua Produtividade</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="description"
+        content="Transforme sua vida em um jogo produtivo com o GameFlow. O sistema que organiza toda sua vida em um só lugar.">
     <link rel="icon" href="./icones/controle-de-video-game.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <section>
-        <img class="icon" src="./icones/controle-de-video-game.png" alt="">
-        <h1>Transforme sua vida num <span style="color: #14c9fd;">jogo produtivo</span> com o GameFlow<span
-                style="color: #14c9fd;">.</span> </h1>
-        <p>O sistema que organiza toda a sua vida em um só lugar.</p>
-        <img class="main-image" src="./areas-vida/imagem-principal.png" alt="">
-        <a class="button" href="#compra">Acesse o GameFlow!</a>
-
-    </section>
-
-    <section>
-        <h1>Veja como Funciona:</h1>
-        <p>Aperte o Play! </p>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/rxmRKQgM0GU" title="Apresentação do GameFlow" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-        </div>
-        <a class="button" href="#compra">Acesse o GameFlow!</a>
-    </section>
-    <section>
-        <h1>Confira como é o GameFlow:</h1>
-        <p>Organize todas as áreas da sua vida: </p>
-        <div class="setores">
-            <div class="setor">
-                <img class="icon" src="./icones/viagem.png" alt="">
-                <img class="life-area" src="./areas-vida/viagens.png" alt="">
-                <h3>Planeje suas viagens e aproveite ao máximo cada aventura.</h3>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-container">
+            <div class="logo-container">
+                <img class="logo" src="./icones/controle-de-video-game.png" alt="GameFlow Logo">
+                <span class="logo-text">GameFlow</span>
             </div>
 
-            <div class="setor">
-                <img class="icon" src="./icones/avaliar.png" alt="">
-                <img class="life-area" src="./areas-vida/tarefas.png" alt="">
-                <h3>Planeje suas tarefas e mantenha o foco para conquistar seus objetivos.</h3>
-            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Transforme sua vida em um <span class="text-accent">jogo produtivo</span>
+                        com o GameFlow em<span class="text-accent"> 2026.</span>
+                    </h1>
+                    <p class="hero-subtitle">Ano novo, vida nova: o sistema completo que organiza toda a sua vida em um
+                        só lugar.</p>
 
-            <div class="setor">
-                <img class="icon" src="./icones/cerebro.png" alt="">
-                <img class="life-area" src="./areas-vida/segundo-cerebro.png" alt="">
-                <h3>Centralize suas ideias e informações.</h3>
-            </div>
 
-            <div class="setor">
-                <img class="icon" src="./icones/musculo.png" alt="">
-                <img class="life-area" src="./areas-vida/treinos.png" alt="">
-                <h3>Planeje seus treinos e acompanhe seu progresso físico de maneira prática.</h3>
-            </div>
+                    <a class="btn btn-primary" href="#compra">
+                        QUERO SER PRODUTIVO EM 2026!
+                    </a>
+                </div>
 
-            <div class="setor">
-                <img class="icon" src="./icones/sucesso.png" alt="">
-                <img class="life-area" src="./areas-vida/gamificacao.png" alt="">
-                <h3>Ganhe XP cumprindo tarefas, suba de nível, ganhe moedas e colete recompensas!</h3>
-            </div>
-
-            <div class="setor">
-                <img class="icon" src="./icones/computador.png" alt="">
-                <img class="life-area" src="./areas-vida/habitos.png" alt="">
-                <h3>Crie hábitos positivos e organize sua rotina de forma eficiente.</h3>
-            </div>
-
-            <div class="setor">
-                <img class="icon" src="./icones/resultado.png" alt="">
-                <img class="life-area" src="./areas-vida/planejamento.png" alt="">
-                <h3>Estruture seu planejamento semanal e alcance metas de longo prazo com facilidade.</h3>
-            </div>
-
-            <div class="setor">
-                <img class="icon" src="./icones/dinheiro.png" alt="">
-                <img class="life-area" src="./areas-vida/financeiro.png" alt="">
-                <h3>Gerencie suas finanças, controle seus gastos e economize mais.</h3>
-            </div>
-
-            <div class="setor">
-                <img class="icon" src="./icones/carrinho-de-compras.png" alt="">
-                <img class="life-area" src="./areas-vida/compras.png" alt="">
-                <h3>Organize sua lista de compras e economize tempo no dia a dia.</h3>
-            </div>
-
-            <div class="setor">
-                <img class="icon" src="./icones/educacao.png" alt="">
-                <img class="life-area" src="./areas-vida/estudos.png" alt="">
-                <h3>Organize seus estudos e melhore seu desempenho acadêmico ou profissional.</h3>
+                <div class="hero-visual">
+                    <div class="hero-image-container">
+                        <img class="hero-image" src="./areas-vida/imagem-principal.png" alt="Dashboard do GameFlow">
+                        <div class="hero-glow"></div>
+                    </div>
+                </div>
             </div>
         </div>
-        <a class="button" href="#compra">Acesse o GameFlow!</a>
-    </section>
-    <section>
-        <h1>Confira o que estão falando do GameFlow...</h1>
-        <div class="grid">
-            <div class="depoimento">
-                <div class="depoimento-row1">
-                    <img class="foto-depoimento" src="./fotos-perfil/1.png" alt="">
-                    <p class="nome-depoimento">Izabelle Teixeira S.</p>
-                </div>
+    </header>
 
-                <span class="avaliacao-depoimento">⭐⭐⭐⭐⭐</span>
-
-                <p class="texto-depoimento">Como estudante de cursinho, é importante para acompanhar e organizar minhas
-                    tarefas. O sistema tem sido de grande ajuda no planejamento de todas as coisas que preciso fazer.
-                </p>
-                <p class="data-depoimento">25/11/2024</p>
-            </div>
-            <div class="depoimento">
-                <div class="depoimento-row1">
-                    <img class="foto-depoimento" src="./fotos-perfil/2.png" alt="">
-                    <p class="nome-depoimento">João Pedro Macedo</p>
-                </div>
-
-                <span class="avaliacao-depoimento">⭐⭐⭐⭐⭐</span>
-
-                <p class="texto-depoimento">Muito bom esse template, tem me ajudado a me manter organizado!</p>
-                <p class="data-depoimento">27/11/2024</p>
-            </div>
-            <div class="depoimento">
-                <div class="depoimento-row1">
-                    <img class="foto-depoimento" src="./fotos-perfil/perfil.webp" alt="">
-                    <p class="nome-depoimento">Guilherme Araújo</p>
-                </div>
-
-                <span class="avaliacao-depoimento">⭐⭐⭐⭐⭐</span>
-
-                <p class="texto-depoimento">Excelente, muito bom!</p>
-                <p class="data-depoimento">02/12/2024</p>
-            </div>
-            <div class="depoimento">
-                <div class="depoimento-row1">
-                    <img class="foto-depoimento" src="./fotos-perfil/perfil3.webp" alt="">
-                    <p class="nome-depoimento">Sofia Zanetti</p>
-                </div>
-
-                <span class="avaliacao-depoimento">⭐⭐⭐⭐⭐</span>
-
-                <p class="texto-depoimento">Já comprei outros que não me ajudaram muito, esse modelo de vocês é
-                    realmente eficiente, muito fácil de adaptar para necessidade da empresa. To gostando bastante e
-                    recomendo.</p>
-                <p class="data-depoimento">07/12/2024</p>
-            </div>
-            <div class="depoimento">
-                <div class="depoimento-row1">
-                    <img class="foto-depoimento" src="./fotos-perfil/4.png" alt="">
-                    <p class="nome-depoimento">Pedro Lucca Mendes</p>
-                </div>
-
-                <span class="avaliacao-depoimento">⭐⭐⭐⭐⭐</span>
-
-                <p class="texto-depoimento">É difícil encontrar o modelo perfeito que encaixe especificamente ao que
-                    preciso. Felizmente, este pode ser personalizado para corresponder ao que estou tentando realizar.
-                    Achei ótimo!</p>
-                <p class="data-depoimento">11/12/2024</p>
-            </div>
-            <div class="depoimento">
-                <div class="depoimento-row1">
-                    <img class="foto-depoimento" src="./fotos-perfil/5.png" alt="">
-                    <p class="nome-depoimento">Gustavo Ribeiro</p>
-
-                </div>
-
-                <span class="avaliacao-depoimento">⭐⭐⭐⭐⭐</span>
-
-                <p class="texto-depoimento">Incrível como a organização já otimiza o tempo e o esforço tanto em tarefas
-                    pessoais quanto no trabalho. Estou amando!!</p>
-                <p class="data-depoimento">12/12/2024</p>
-            </div>
-            <div class="depoimento">
-                <div class="depoimento-row1">
-                    <img class="foto-depoimento" src="./fotos-perfil/3.png" alt="">
-                    <p class="nome-depoimento">Paulo Ciesla</p>
-
-                </div>
-
-                <span class="avaliacao-depoimento">⭐⭐⭐⭐⭐</span>
-
-                <p class="texto-depoimento">Extremamente útil e não consigo parar de usar.</p>
-                <p class="data-depoimento">15/12/2024</p>
-            </div>
-            <div class="depoimento">
-                <div class="depoimento-row1">
-                    <img class="foto-depoimento" src="./fotos-perfil/perfil2.webp" alt="">
-                    <p class="nome-depoimento">Beatriz Camargo</p>
-                </div>
-
-                <span class="avaliacao-depoimento">⭐⭐⭐⭐⭐</span>
-
-                <p class="texto-depoimento">Esse supera outras ferramentas com a vantagem de manter todos as informações
-                    de diferentes áreas da vida em um único lugar de forma bem organizada. </p>
-                <p class="data-depoimento">19/12/2024</p>
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Veja como Funciona</h2>
+                <p class="section-subtitle">Aperte o Play e descubra como transformar sua produtividade!</p>
             </div>
 
+
+            <iframe width="800" height="694" src="https://www.youtube.com/embed/rxmRKQgM0GU"
+                title="Apresentação GameFlow" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+            <div class="video-cta">
+                <a class="btn btn-secondary" href="#compra">
+                    QUERO COMEÇAR AGORA!
+                </a>
+            </div>
         </div>
     </section>
 
-    <section>
-        <h1>Compre uma vez, seja produtivo para sempre.</h1>
-        <p>Comece 2025 com organização e produtividade.</p>
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Uma vida mais <span class="text-accent">eficiente</span> te espera</h2>
+                <p class="section-subtitle">O GameFlow vai te ajudar a transformar procrastinação em foco</p>
+            </div>
 
-        <div id="compra" class="ofertas">
-            <div class="oferta">
-                <p class="nome-oferta">GameFlow Pro</p>
-                <div class="preco">
-                    <p class="preco-anterior">R$169,90</p>
-                    <p class="preco-novo">R$59,90</p>
-                </div>
-                <hr class="linha-divisoria">
-                <div class="descricao-oferta">
-                    <p>✔️ GameFlow</p>
-                    <p>✔️ Curso ensinando a usar e configurar o sistema</p>
-                    <p>✔️ Atualizações e melhorias</p>
-                    <p>✔️ <span style="color: rgb(255, 14, 195);  font-weight: 700;">Create Flow </span> (criação de
-                        conteúdo) <span class="preco-anterior">R$47</span></p>
-                    <p>✔️ <span style="color: rgb(102, 253, 102); font-weight: 700;">Study Flow </span> (estudos com IA)
-                        <span class="preco-anterior">R$97</span>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon-bg"></div>
+                        <span class="feature-emoji">🎮</span>
+                    </div>
+                    <h3 class="feature-title">Transforme sua vida em um jogo</h3>
+                    <p class="feature-description">
+                        Ganhe XP completando tarefas, suba de nível, ganhe moedas e troque por recompensas. Melhore suas
+                        habilidades como num jogo de RPG.
                     </p>
-                    <p>✔️ Suporte <span style="color: rgb(255, 153, 20); font-weight: 700;">prioritário</span></p>
-                    <p>✔️ <span style="color: rgb(251, 255, 36); font-weight: 700;">Garantia</span> de 7 dias (zero
-                        risco)</p>
-                    <p>🎁 <strong>Bônus:</strong> Curso de Notion</p>
-                    <p>🎁 <strong>Bônus:</strong> Curso de Produtividade</p>
-                    <p>🎁 <strong>Bônus</strong> secreto</p>
                 </div>
-                <div class="oferta-bottom">
-                    <a id="buyPro" class="btn-compra" href="https://sun.eduzz.com/zezrsoqi">
-                        Eu quero o GameFlow Pro!</a>
-                    <img class="garantia" src="icones/compra-garantida.png" alt="">
-                </div>
-            </div>
 
-            <div class="oferta">
-                <p class="nome-oferta">GameFlow Básico</p>
-                <div class="preco">
-                    <p class="preco-anterior">R$97,90</p>
-                    <p class="preco-novo">R$29,90</p>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon-bg"></div>
+                        <span class="feature-emoji">💪</span>
+                    </div>
+                    <h3 class="feature-title">Mais disciplina e foco</h3>
+                    <p class="feature-description">
+                        Sistema de hábitos e rotinas que transforma a procrastinação em ação consistente. Alcance níveis
+                        de produtividade que você nunca imaginou.
+                    </p>
                 </div>
-                <hr class="linha-divisoria">
-                <div class="descricao-oferta">
-                    <p>✔️ GameFlow</p>
-                    <p>✔️ Curso ensinando a usar e configurar o sistema</p>
-                    <p>✔️ Atualizações e melhorias</p>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon-bg"></div>
+                        <span class="feature-emoji">🗂️</span>
+                    </div>
+                    <h3 class="feature-title">Organização completa</h3>
+                    <p class="feature-description">
+                        Centralize todas as áreas da sua vida em um só lugar. Tarefas, metas, finanças, estudos e muito
+                        mais, tudo organizado e sincronizado.
+                    </p>
                 </div>
-                <div class="oferta-bottom">
-                    <a id="buyBasico" class="btn-compra" href="https://sun.eduzz.com/xturloe6">Eu quero o
-                        Básico</a>
-                    <img class="garantia" src="icones/compra-garantida.png" alt="">
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon-bg"></div>
+                        <span class="feature-emoji">🎯</span>
+                    </div>
+                    <h3 class="feature-title">Metas e conquistas</h3>
+                    <p class="feature-description">
+                        Visualize, acompanhe e conquiste suas metas de forma clara e motivadora. Comemore cada vitória
+                        no seu caminho para o sucesso.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section>
-        <h1>Perguntas frequentes</h1>
-        <div class="faq">
-            <div class="faq-item">
-                <div class="faq-main">
-                    <p class="faq-pergunta">Consigo acessar pelo celular?</p>
-                    <img class="chevron" src="./icones/chevron.png" alt="">
-                </div>
-                <p class="faq-resposta">Sim, o sistema é completamente responsivo e pode ser acessado pelo celular.
-                </p>
+    <!-- Areas Section -->
+    <section class="areas-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Organize todas as áreas da sua vida</h2>
+                <p class="section-subtitle">O GameFlow cuida de cada aspecto da sua rotina</p>
             </div>
-            <div class="faq-item">
-                <div class="faq-main">
-                    <p class="faq-pergunta">Como vou receber o Game Flow e o treinamento auxiliar?</p>
-                    <img class="chevron" src="./icones/chevron.png" alt="">
+
+            <div class="areas-grid">
+                <!-- Area 1 -->
+                <div class="area-card">
+                    <div class="area-visual">
+                        <img src="./areas-vida/gamificacao.png" alt="Gamificação - GameFlow" class="area-image">
+                    </div>
+                    <div class="area-content">
+                        <div class="area-header">
+                            <div class="area-icon">
+                                <span>🎮</span>
+                            </div>
+                            <h3 class="area-title">Gamificação</h3>
+                        </div>
+                        <p class="area-description">Ganhe XP, suba de nível e colete recompensas completando tarefas</p>
+                    </div>
                 </div>
-                <p class="faq-resposta">Você receberá o acesso via e-mail logo após a confirmação da compra.
-                </p>
-            </div>
-            <div class="faq-item">
-                <div class="faq-main">
-                    <p class="faq-pergunta">Sou iniciante no Notion, consigo me adaptar?</p>
-                    <img class="chevron" src="./icones/chevron.png" alt="">
+
+                <!-- Area 2 -->
+                <div class="area-card">
+                    <div class="area-visual">
+                        <img src="./areas-vida/habitos.png" alt="Hábitos - GameFlow" class="area-image">
+                    </div>
+                    <div class="area-content">
+                        <div class="area-header">
+                            <div class="area-icon">
+                                <span>📝</span>
+                            </div>
+                            <h3 class="area-title">Tarefas & Hábitos</h3>
+                        </div>
+                        <p class="area-description">Crie rotinas positivas e organize suas atividades diárias</p>
+                    </div>
                 </div>
-                <p class="faq-resposta">Claro! O sistema foi desenvolvido para ser intuitivo, mesmo para iniciantes E
-                    temos nosso treinamento auxiliar para te ajudar!
-                </p>
-            </div>
-            <div class="faq-item">
-                <div class="faq-main">
-                    <p class="faq-pergunta">Eu terei suporte a dúvidas?</p>
-                    <img class="chevron" src="./icones/chevron.png" alt="">
+
+                <!-- Area 3 -->
+                <div class="area-card">
+                    <div class="area-visual">
+                        <img src="./areas-vida/tarefas.png" alt="Tarefas - GameFlow" class="area-image">
+                    </div>
+                    <div class="area-content">
+                        <div class="area-header">
+                            <div class="area-icon">
+                                <span>🎯</span>
+                            </div>
+                            <h3 class="area-title">Metas & Objetivos</h3>
+                        </div>
+                        <p class="area-description">Defina e acompanhe suas metas de curto e longo prazo</p>
+                    </div>
                 </div>
-                <p class="faq-resposta">Sim, você terá acesso a um suporte dedicado para esclarecer suas dúvidas.
-                </p>
-            </div>
-            <div class="faq-item">
-                <div class="faq-main">
-                    <p class="faq-pergunta">Posso personalizar meu sistema Game Flow?</p>
-                    <img class="chevron" src="./icones/chevron.png" alt="">
+
+                <!-- Area 4 -->
+                <div class="area-card">
+                    <div class="area-visual">
+                        <img src="./areas-vida/segundo-cerebro.png" alt="Segundo Cérebro - GameFlow" class="area-image">
+                    </div>
+                    <div class="area-content">
+                        <div class="area-header">
+                            <div class="area-icon">
+                                <span>🧠</span>
+                            </div>
+                            <h3 class="area-title">Segundo Cérebro</h3>
+                        </div>
+                        <p class="area-description">Centralize ideias, notas e informações importantes</p>
+                    </div>
                 </div>
-                <p class="faq-resposta">Sim, o sistema é completamente personalizável para atender às suas necessidades.
-                </p>
+
+                <!-- Area 5 -->
+                <div class="area-card">
+                    <div class="area-visual">
+                        <img src="./areas-vida/planejamento.png" alt="Planejamento - GameFlow" class="area-image">
+                    </div>
+                    <div class="area-content">
+                        <div class="area-header">
+                            <div class="area-icon">
+                                <span>📊</span>
+                            </div>
+                            <h3 class="area-title">Planejamento</h3>
+                        </div>
+                        <p class="area-description">Estruture sua semana e planeje objetivos de longo prazo</p>
+                    </div>
+                </div>
+
+                <!-- Area 6 -->
+                <div class="area-card">
+                    <div class="area-visual">
+                        <img src="./areas-vida/financeiro.png" alt="Financeiro - GameFlow" class="area-image">
+                    </div>
+                    <div class="area-content">
+                        <div class="area-header">
+                            <div class="area-icon">
+                                <span>💰</span>
+                            </div>
+                            <h3 class="area-title">Finanças</h3>
+                        </div>
+                        <p class="area-description">Controle gastos, economize e alcance liberdade financeira</p>
+                    </div>
+                </div>
+
+                <!-- Area 7 -->
+                <div class="area-card">
+                    <div class="area-visual">
+                        <img src="./areas-vida/estudos.png" alt="Estudos - GameFlow" class="area-image">
+                    </div>
+                    <div class="area-content">
+                        <div class="area-header">
+                            <div class="area-icon">
+                                <span>📚</span>
+                            </div>
+                            <h3 class="area-title">Estudos</h3>
+                        </div>
+                        <p class="area-description">Organize materiais, prazos e otimize seu aprendizado</p>
+                    </div>
+                </div>
+
+                <!-- Area 8 -->
+                <div class="area-card">
+                    <div class="area-visual">
+                        <img src="./areas-vida/treinos.png" alt="Treinos - GameFlow" class="area-image">
+                    </div>
+                    <div class="area-content">
+                        <div class="area-header">
+                            <div class="area-icon">
+                                <span>💪</span>
+                            </div>
+                            <h3 class="area-title">Saúde & Fitness</h3>
+                        </div>
+                        <p class="area-description">Acompanhe treinos, alimentação e progresso físico</p>
+                    </div>
+                </div>
+
+                <!-- Area 9 -->
+                <div class="area-card">
+                    <div class="area-visual">
+                        <img src="./areas-vida/compras.png" alt="Compras - GameFlow" class="area-image">
+                    </div>
+                    <div class="area-content">
+                        <div class="area-header">
+                            <div class="area-icon">
+                                <span>🛒</span>
+                            </div>
+                            <h3 class="area-title">Compras</h3>
+                        </div>
+                        <p class="area-description">Listas de compras organizadas e controle de orçamento</p>
+                    </div>
+                </div>
+
+                <!-- Area 10 -->
+                <div class="area-card">
+                    <div class="area-visual">
+                        <img src="./areas-vida/viagens.png" alt="Viagens - GameFlow" class="area-image">
+                    </div>
+                    <div class="area-content">
+                        <div class="area-header">
+                            <div class="area-icon">
+                                <span>✈️</span>
+                            </div>
+                            <h3 class="area-title">Viagens</h3>
+                        </div>
+                        <p class="area-description">Planeje e organize todas as suas aventuras</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
 
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Confira o que estão falando do GameFlow</h2>
+                <p class="section-subtitle">Junte-se a milhares de pessoas que já transformaram suas vidas</p>
+            </div>
 
-    <footer>
-        <p>Termos de Uso | Políticas de Privacidade | Contato</p>
-        <p>© 2024 GameFlow. Todos os direitos reservados.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="user-info">
+                            <img class="user-avatar" src="./fotos-perfil/1.png" alt="Izabelle">
+                            <div class="user-details">
+                                <h4 class="user-name">Izabelle Teixeira S.</h4>
+                                <div class="user-rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "Como estudante de cursinho, é importante para acompanhar e organizar minhas tarefas. O sistema
+                        tem sido de grande ajuda no planejamento de todas as coisas que preciso fazer."
+                    </p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="user-info">
+                            <img class="user-avatar" src="./fotos-perfil/2.png" alt="João Pedro">
+                            <div class="user-details">
+                                <h4 class="user-name">João Pedro Macedo</h4>
+                                <div class="user-rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "Muito bom esse template, tem me ajudado a me manter organizado!"
+                    </p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="user-info">
+                            <img class="user-avatar" src="./fotos-perfil/4.png" alt="Pedro">
+                            <div class="user-details">
+                                <h4 class="user-name">Pedro Lucca Mendes</h4>
+                                <div class="user-rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "É difícil encontrar o modelo perfeito que encaixe especificamente ao que preciso. Felizmente,
+                        este pode ser personalizado para corresponder ao que estou tentando realizar. Achei ótimo!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Como funciona?</h2>
+                <p class="section-subtitle">Em 4 passos simples, sua vida vai mudar</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Compre</h3>
+                        <p class="step-description">Escolha o plano ideal para suas necessidades</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Receba o acesso</h3>
+                        <p class="step-description">Acesso imediato ao sistema por e-mail</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Aprenda a configurar</h3>
+                        <p class="step-description">Curso completo ensinando a usar o sistema</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Transforme sua vida</h3>
+                        <p class="step-description">Produtivo em menos de 1 semana!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="compra" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Oferta única de fim de ano!</h2>
+                <p class="section-subtitle">Comece 2026 com organização e produtividade</p>
+                <div class="limited-offer">
+                    <span class="offer-badge">🚀 OFERTA POR TEMPO LIMITADO</span>
+                </div>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name">GameFlow Básico</h3>
+                        <div class="price-container">
+                            <span class="old-price">R$97,90</span>
+                            <span class="new-price">R$29,90</span>
+                        </div>
+                        <p class="plan-description">Ideal para quem quer começar</p>
+                    </div>
+
+                    <div class="pricing-features">
+                        <div class="feature-included">
+                            <span class="check-icon">✓</span>
+                            <span>Acesso completo ao GameFlow</span>
+                        </div>
+                        <div class="feature-included">
+                            <span class="check-icon">✓</span>
+                            <span>Curso de configuração e uso</span>
+                        </div>
+                        <div class="feature-included">
+                            <span class="check-icon">✓</span>
+                            <span>Atualizações e melhorias</span>
+                        </div>
+                    </div>
+
+                    <div class="pricing-cta">
+                        <a href="https://sun.eduzz.com/xturloe6" class="btn btn-outline">
+                            EU QUERO O BÁSICO
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="popular-badge">MAIS POPULAR</div>
+                    <div class="pricing-header">
+                        <h3 class="plan-name">GameFlow Pro</h3>
+                        <div class="price-container">
+                            <span class="old-price">R$169,90</span>
+                            <span class="new-price">R$59,90</span>
+                        </div>
+                        <p class="plan-description">Solução completa para produtividade máxima</p>
+                    </div>
+
+                    <div class="pricing-features">
+                        <div class="feature-included">
+                            <span class="check-icon">✓</span>
+                            <span>Tudo do plano Básico</span>
+                        </div>
+                        <div class="feature-included">
+                            <span class="check-icon">✓</span>
+                            <span><strong>MindFlow</strong> - Criação de conteúdo</span>
+                        </div>
+                        <div class="feature-included">
+                            <span class="check-icon">✓</span>
+                            <span><strong>Enterprise Flow</strong> - Gestão de empresas</span>
+                        </div>
+                        <div class="feature-included">
+                            <span class="check-icon">✓</span>
+                            <span>Suporte <strong>prioritário</strong></span>
+                        </div>
+                        <div class="feature-included">
+                            <span class="check-icon">✓</span>
+                            <span><strong>Garantia</strong> de 7 dias</span>
+                        </div>
+                        <div class="feature-included">
+                            <span class="check-icon">✓</span>
+                            <span><strong>Bônus:</strong> Curso de Notion</span>
+                        </div>
+                        <div class="feature-included">
+                            <span class="check-icon">✓</span>
+                            <span><strong>Bônus:</strong> Curso de Produtividade</span>
+                        </div>
+                        <div class="feature-included">
+                            <span class="check-icon">✓</span>
+                            <span><strong>Bônus secreto</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="pricing-cta">
+                        <a href="https://sun.eduzz.com/zezrsoqi" class="btn btn-primary">
+                            EU QUERO O PRO
+                        </a>
+                    </div>
+
+                    <div class="guarantee-badge">
+                        <img src="icones/compra-garantida.png" alt="Garantia de 7 dias">
+                        <span>Compra 100% Segura</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Perguntas frequentes</h2>
+                <p class="section-subtitle">Tire todas as suas dúvidas antes de comprar</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Consigo acessar pelo celular?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, o sistema é completamente responsivo e pode ser acessado pelo celular, tablet ou
+                            computador.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Como vou receber o GameFlow e o treinamento?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Você receberá o acesso via e-mail logo após a confirmação da compra, de forma instantânea e
+                            automática.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Sou iniciante no Notion, consigo me adaptar?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Claro! O sistema foi desenvolvido para ser intuitivo, mesmo para iniciantes. E temos nosso
+                            treinamento auxiliar para te ajudar em cada passo!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Eu terei suporte a dúvidas?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, você terá acesso a um suporte dedicado para esclarecer suas dúvidas. No plano Pro, o
+                            suporte é prioritário!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Posso personalizar meu sistema GameFlow?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, o sistema é completamente personalizável para atender às suas necessidades específicas.
+                            Você pode adaptar cores, categorias e funcionalidades.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Compre uma vez, seja produtivo para sempre</h2>
+                <p class="cta-subtitle">Comece 2026 com organização e produtividade</p>
+                <a href="#compra" class="btn btn-primary btn-large">
+                    <span class="btn-text">TRANSFORMAR MINHA VIDA AGORA</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-container">
+                        <img class="logo" src="./icones/controle-de-video-game.png" alt="GameFlow Logo">
+                        <span class="logo-text">GameFlow</span>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Produto</h4>
+                        <a href="#features">Funcionalidades</a>
+                        <a href="#pricing">Planos</a>
+                        <a href="#testimonials">Depoimentos</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Suporte</h4>
+                        <a href="#faq">FAQ</a>
+                        <a href="#contact">Contato</a>
+                        <a href="#help">Ajuda</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="#terms">Termos de Uso</a>
+                        <a href="#privacy">Políticas de Privacidade</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 GameFlow. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
+
     <script>
-        document.querySelectorAll('.faq-item').forEach(item => {
-            const chevron = item.querySelector('.chevron');
-            const resposta = item.querySelector('.faq-resposta');
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const toggle = question.querySelector('.faq-toggle');
 
-            chevron.addEventListener('click', () => {
-                // Alterna a classe 'rotated' no chevron
-                chevron.classList.toggle('rotated');
-
-                // Mostra ou esconde a resposta
-                if (resposta.style.display === 'block') {
-                    resposta.style.display = 'none';
-                } else {
-                    resposta.style.display = 'block';
-                }
+                answer.classList.toggle('active');
+                toggle.textContent = answer.classList.contains('active') ? '−' : '+';
             });
         });
-    </script>
 
-
-    <script>
-        function getURLParameters() {
-            const params = new URLSearchParams(window.location.search);
-            return params.toString() ? '?' + params.toString() : '';
-        }
-
+        // Add URL parameters to checkout links
         function addParamsToCheckout() {
-            const params = getURLParameters();
-            const url1 = "https://sun.eduzz.com/xturloe6" + params; // Básico
-            const url2 = "https://sun.eduzz.com/zezrsoqi" + params; // Pro
+            const params = new URLSearchParams(window.location.search);
+            const paramString = params.toString() ? '?' + params.toString() : '';
 
-            const checkoutBasico = document.getElementById("buyBasico");
-            const checkoutPro = document.getElementById("buyPro");
-
-            checkoutBasico.href = url1;
-            checkoutPro.href = url2;
+            document.querySelectorAll('a[href*="eduzz.com"]').forEach(link => {
+                const originalHref = link.getAttribute('href');
+                link.setAttribute('href', originalHref + paramString);
+            });
         }
 
-        window.onload = addParamsToCheckout;
-
+        window.addEventListener('load', addParamsToCheckout);
     </script>
-
 </body>
 
 </html>
